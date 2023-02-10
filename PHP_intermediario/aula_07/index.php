@@ -5,6 +5,8 @@
     * Break
 
 
+*/
+
 $nome = "Waliston";
 
 switch ($nome) {
@@ -19,14 +21,15 @@ switch ($nome) {
         break;
 }
 
-*/
 
 //podemos utilizar o BREAK para loop, while e foreach e no switch
 for ($i=0; $i < 10; $i++) { 
     echo $i;
     echo '<br />';
     
-    if($i == 5) break;
+    if($i == 5) {
+        break;
+    }
   
 }
 
