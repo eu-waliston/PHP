@@ -4,7 +4,12 @@
 // $content = "Não estou entendendo...";
 // file_put_contents('file.txt', $content);
 
-$content = file_get_contents('https://youtube.com');
+// $content = file_get_contents('https://youtube.com');
 
+$conteudo = "teste";
 
-echo $content;
+$fp = fopen("novo.txt", "wb");
+
+fwrite($fp, $conteudo);
+
+fclose($fp);
