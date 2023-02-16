@@ -3,7 +3,7 @@
 define('HOST', 'localhost');
 define('DB', 'modulo_8');
 define('USER', 'root');
-define('PASSWORD', '99583100');
+define('PASSWORD', '');
 
 try {
 
