@@ -1,0 +1,2 @@
+<?php
+# https://getcomposer.org/
