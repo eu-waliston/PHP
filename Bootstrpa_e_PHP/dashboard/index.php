@@ -14,22 +14,23 @@
 
 <body>
     <main>
-        <nav class="navbar navbar-expand-md navbar-primary  bg-primary">
+        <nav class="navbar navbar-expand-md navbar-primary  bg-primary fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Danki Code</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
+                    data-toggle="collapse" data-target="navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0 " id="menu-principal">
-                        <li  class="nav-item active" >
+                        <li class="nav-item active">
                             <a class="nav-link" href="#" ref_sys="sobre">Editar sobre</a>
                         </li>
-                        <li class="nav-item" >
+                        <li class="nav-item">
                             <a class="nav-link" href="#" ref_sys="cadastrar_equipe">Cadastrar Equipe</a>
                         </li>
-                        <li class="nav-item" >
+                        <li class="nav-item">
                             <a class="nav-link" href="#" ref_sys="lista_equipe">Lista Equipe</a>
                         </li>
                     </ul>
@@ -42,123 +43,127 @@
             </div>
         </nav>
     </main>
-
-    <header id="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h2>
-                        <i class="bi bi-gear-fill"></i> Painel de controle
-                    </h2>
-                </div>
-                <div class="col-md-6">
-                    <p>
-                        <i class="bi bi-clock-fill"></i> seu ultimo login foi em <br /> 12/06/20023
-                    </p>
+    <div class="box" style="position: relative; top: 50px">
+        <header id="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>
+                            <i class="bi bi-gear-fill"></i> Painel de controle
+                        </h2>
+                    </div>
+                    <div class="col-md-6">
+                        <p>
+                            <i class="bi bi-clock-fill"></i> seu ultimo login foi em <br /> 12/06/20023
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <section class="bread">
-        <div class="container">
-            <nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">Home</li>
-                </ol>
-            </nav>
-        </div>
-    </section>
+        <section class="bread">
+            <div class="container">
+                <nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">Home</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
 
 
-    <section class="principal">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <ul class="list-group">
+        <section class="principal">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <ul class="list-group">
 
-                        <li ref_sys="sobre" class="list-group-item active" style="cursor: pointer;"><i class="bi bi-pen"></i> Sobre</li>
-                        <li ref_sys="cadastrar_equipe" class="list-group-item" style="cursor: pointer;"><i class="bi bi-pen"></i> Cadastrar Equipe <span
-                                class="badge text-bg-secondary">4</span></li>
-                        <li ref_sys="lista_equipe" class="list-group-item " aria-current="true" style="cursor: pointer;"><i class="bi bi-card-list"></i></i>
-                            Lista Equipe </li>
-                    </ul>
-                </div>
-                <div class="col-md-9">
-
-                    <div class="card">
-                        <div class="card-header bg-primary text-white">
-                            Sobre
-                        </div>
-                        <div class="card-body">
-                            <form>
-                                <div class="form-group">
-                                    <label for="email">Código HTML</label>
-                                    <textarea style="height: 140px;" class="form-control"></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary  mt-2">Submit</button>
-                            </form>
-                        </div>
+                            <a ref_sys="sobre" class="list-group-item active" style="cursor: pointer;"><i
+                                    class="bi bi-pen"></i> Sobre</a>
+                            <a ref_sys="cadastrar_equipe" class="list-group-item" style="cursor: pointer;"><i
+                                    class="bi bi-pen"></i> Cadastrar Equipe <span
+                                    class="badge text-bg-secondary">4</span></a>
+                            <a ref_sys="lista_equipe" class="list-group-item " aria-current="true"
+                                style="cursor: pointer;"><i class="bi bi-card-list"></i>Lista Equipe </a>
+                        </ul>
                     </div>
-                    <br />
-                    <div class="card">
-                        <div class="card-header bg-primary text-white ">
-                            Cadstrar Equipe
+                    <div class="col-md-9">
+
+                        <div class="card" id="sobre_section">
+                            <div class="card-header bg-primary text-white">
+                                Sobre
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="email">Código HTML</label>
+                                        <textarea style="height: 140px;" class="form-control"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary  mt-2">Submit</button>
+                                </form>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <form>
-                                <div class="form-group">
-                                    <label for="email">Nome do Memebro</label>
+
+                        <br />
+                        <div class="card" id="cadastrar_equipe_section">
+                            <div class="card-header bg-primary text-white ">
+                                Cadstrar Equipe
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="email">Nome do Memebro</label>
+                                        <br />
+                                        <input type="text" name="membro_nome" class="form-control">
+                                    </div>
                                     <br />
-                                    <input type="text" name="membro_nome" class="form-control">
-                                </div>
-                                <br />
-                                <div class="form-group">
-                                    <label for="email">Descrição do Memebro</label>
-                                    <textarea style="height: 140px;" class="form-control"></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary mt-2">Submit</button>
-                            </form>
+                                    <div class="form-group">
+                                        <label for="email">Descrição do Memebro</label>
+                                        <textarea style="height: 140px;" class="form-control"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary mt-2">Submit</button>
+                                </form>
+                            </div>
                         </div>
-                    </div>
 
-                    <br />
-                    <div class="card">
-                        <div class="card-header bg-primary text-white ">
-                            Membros da Equipe
-                        </div>
-                        <div class="card-body">
+                        <br />
+                        <div class="card" id="lista_equipe_section">
+                            <div class="card-header bg-primary text-white ">
+                                Membros da Equipe
+                            </div>
+                            <div class="card-body">
 
-                            <table class="table">
-                                <thead class="thead-light">
-                                    <tr>
-                                        <th scope="col">ID:</th>
-                                        <th scope="col">Memebro da Equipe</th>
-                                        <th scope="col">Excluir</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    for ($i = 0; $i < 5; $i++) {
-                                        ?>
+                                <table class="table">
+                                    <thead class="thead-light">
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>Waliston</td>
-                                            <td>
-                                                <button class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
-                                            </td>
+                                            <th scope="col">ID:</th>
+                                            <th scope="col">Memebro da Equipe</th>
+                                            <th scope="col">Excluir</th>
                                         </tr>
-                                    <?php
-                                    }
-                                    ?>
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        for ($i = 0; $i < 5; $i++) {
+                                            ?>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Waliston</td>
+                                                <td>
+                                                    <button class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
+                                                </td>
+                                            </tr>
+                                        <?php
+                                        }
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
     <script src="./js/bootstrap.min.js"></script>
 
 
@@ -169,20 +174,39 @@
 
     <script>
         $(function () {
+
             cliqueMenu();
+            scrollItem();
             function cliqueMenu() {
-                $('#menu-principal a, .list-group li').click(function () {
-                    $('.list-group li').removeClass('active');
+                $('#menu-principal a, .list-group a').click(function () {
+                    $('.list-group a').removeClass('active');
 
                     $('#menu-principal a').parent().removeClass('active')
 
-                    $('#menu-principal a[ref_sys='+$(this).attr('ref_sys')+']').parent().addClass('active');
+                    $('#menu-principal a[ref_sys=' + $(this).attr('ref_sys') + ']').parent().addClass('active');
 
 
-                    $('.list-group li[ref_sys='+$(this).attr('ref_sys')+']').addClass('active');
+                    $('.list-group a[ref_sys=' + $(this).attr('ref_sys') + ']').addClass('active');
 
                     return false;
                 })
+
+                $('.navbar-collapse a').click(function () {
+                    $(".navbar-collapse").collapse('hide');
+                });
+            }
+
+            function scrollItem() {
+                $('#menu-principal a, .list-group a').click(function () {
+                    let ref = '#' + $(this).attr('ref_sys') + '_section';
+
+                    let offSet = $(ref).offset().top;
+
+                    $('html,body').animate({ 'scrollTop': offSet - 60 })
+
+                    return false;
+                })
+
             }
 
         })
