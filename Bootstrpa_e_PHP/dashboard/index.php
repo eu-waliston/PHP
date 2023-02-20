@@ -14,7 +14,7 @@
 
 <body>
     <main>
-        <nav class="navbar navbar-expand-md navbar-default  bg-default">
+        <nav class="navbar navbar-expand-md navbar-primary  bg-primary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Danki Code</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -53,13 +53,147 @@
                 </div>
                 <div class="col-md-6">
                     <p>
-                        <i class="bi bi-clock-fill"></i> seu ultimo login foi em 12/06/20023
+                        <i class="bi bi-clock-fill"></i> seu ultimo login foi em <br /> 12/06/20023
                     </p>
                 </div>
             </div>
         </div>
     </header>
 
+    <section class="bread">
+        <div class="container">
+            <nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">Home</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+
+    <section class="principal">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <ul class="list-group">
+                        <li class="list-group-item active" aria-current="true"><i class="bi bi-house-door-fill"></i>
+                            Home </li>
+                        <li class="list-group-item"><i class="bi bi-pen"></i> Sobre</li>
+                        <li class="list-group-item"><i class="bi bi-pen"></i> Equipe <span
+                                class="badge text-bg-secondary">4</span></li>
+                    </ul>
+                </div>
+                <div class="col-md-9">
+
+                    <div class="card">
+                        <div class="card-header bg-primary text-white">
+                            Sobre
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="email">Código HTML</label>
+                                    <textarea style="height: 140px;" class="form-control"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary  mt-2">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="card">
+                        <div class="card-header bg-primary text-white ">
+                            Cadstrar Equipe
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="email">Nome do Memebro</label>
+                                    <br />
+                                    <input type="text" name="membro_nome" class="form-control">
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                    <label for="email">Descrição do Memebro</label>
+                                    <textarea style="height: 140px;" class="form-control"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary mt-2">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <br />
+                    <div class="card">
+                        <div class="card-header bg-primary text-white ">
+                            Membros da Equipe
+                        </div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead class="thead-primary">
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">First</th>
+                                        <th scope="col">Last</th>
+                                        <th scope="col">Handle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table class="table">
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">First</th>
+                                        <th scope="col">Last</th>
+                                        <th scope="col">Handle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <script src="./js/bootstrap.min.js"></script>
 </body>
 

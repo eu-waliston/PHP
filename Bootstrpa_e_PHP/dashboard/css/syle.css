@@ -159,12 +159,11 @@ body {
 header#header {
     background-color: #333;
     color: #fff;
-
+    margin-bottom: 20px;
 }
 header p, header h2 {
     margin-top: 20px;
 }
-
 
 @media screen and (max-with: 1000px) {
     #header p {
