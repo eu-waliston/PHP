@@ -22,15 +22,15 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Cadastrar equipe</a>
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0 " id="menu-principal">
+                        <li  class="nav-item active" >
+                            <a class="nav-link" href="#" ref_sys="sobre">Editar sobre</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Editar Sobre</a>
+                        <li class="nav-item" >
+                            <a class="nav-link" href="#" ref_sys="cadastrar_equipe">Cadastrar Equipe</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled">Gerenciar Equipe</a>
+                        <li class="nav-item" >
+                            <a class="nav-link" href="#" ref_sys="lista_equipe">Lista Equipe</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
@@ -76,11 +76,12 @@
             <div class="row">
                 <div class="col-md-3">
                     <ul class="list-group">
-                        <li class="list-group-item active" aria-current="true"><i class="bi bi-house-door-fill"></i>
-                            Home </li>
-                        <li class="list-group-item"><i class="bi bi-pen"></i> Sobre</li>
-                        <li class="list-group-item"><i class="bi bi-pen"></i> Equipe <span
+
+                        <li ref_sys="sobre" class="list-group-item active" style="cursor: pointer;"><i class="bi bi-pen"></i> Sobre</li>
+                        <li ref_sys="cadastrar_equipe" class="list-group-item" style="cursor: pointer;"><i class="bi bi-pen"></i> Cadastrar Equipe <span
                                 class="badge text-bg-secondary">4</span></li>
+                        <li ref_sys="lista_equipe" class="list-group-item " aria-current="true" style="cursor: pointer;"><i class="bi bi-card-list"></i></i>
+                            Lista Equipe </li>
                     </ul>
                 </div>
                 <div class="col-md-9">
@@ -127,65 +128,29 @@
                             Membros da Equipe
                         </div>
                         <div class="card-body">
-                            <table class="table">
-                                <thead class="thead-primary">
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">First</th>
-                                        <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                    </tr>
-                                </tbody>
-                            </table>
 
                             <table class="table">
                                 <thead class="thead-light">
                                     <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">First</th>
-                                        <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
+                                        <th scope="col">ID:</th>
+                                        <th scope="col">Memebro da Equipe</th>
+                                        <th scope="col">Excluir</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                    </tr>
+                                    <?php
+                                    for ($i = 0; $i < 5; $i++) {
+                                        ?>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Waliston</td>
+                                            <td>
+                                                <button class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
+                                            </td>
+                                        </tr>
+                                    <?php
+                                    }
+                                    ?>
                                 </tbody>
                             </table>
                         </div>
@@ -195,6 +160,33 @@
         </div>
     </section>
     <script src="./js/bootstrap.min.js"></script>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+            cliqueMenu();
+            function cliqueMenu() {
+                $('#menu-principal a, .list-group li').click(function () {
+                    $('.list-group li').removeClass('active');
+
+                    $('#menu-principal a').parent().removeClass('active')
+
+                    $('#menu-principal a[ref_sys='+$(this).attr('ref_sys')+']').parent().addClass('active');
+
+
+                    $('.list-group li[ref_sys='+$(this).attr('ref_sys')+']').addClass('active');
+
+                    return false;
+                })
+            }
+
+        })
+    </script>
 </body>
 
 </html>
