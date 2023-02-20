@@ -179,17 +179,23 @@ $sobre = $sobre->fetch()['sobre'];
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $selectMembro = $pdo -> prepare("SELECT id, nome FROM td_equipe;");
-                                        $selectMembro -> execute();
-                                        $membros = $selectMembro-> fetchAll();
+                                        $selectMembro = $pdo->prepare("SELECT id, nome FROM td_equipe;");
+                                        $selectMembro->execute();
+                                        $membros = $selectMembro->fetchAll();
 
-                                        foreach($membros as $key => $value) {
+                                        foreach ($membros as $key => $value) {
                                             ?>
                                             <tr>
-                                                <th scope="row"><?php echo $value['id'] ?></th>
-                                                <td><?php echo $value['nome'] ?></td>
+                                                <th scope="row">
+                                                    <?php echo $value['id'] ?>
+                                                </th>
                                                 <td>
-                                                    <button class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
+                                                    <?php echo $value['nome'] ?>
+                                                </td>
+                                                <td>
+                                                    <button id_membro="<?php echo $value['id']; ?>"
+                                                        class="btn btn-danger deletar_membro"><i
+                                                            class="bi bi-trash-fill"></i></button>
                                                 </td>
                                             </tr>
                                         <?php
@@ -248,6 +254,25 @@ $sobre = $sobre->fetch()['sobre'];
                 })
 
             }
+
+            $('button.deletar_membro').click(function () {
+                let id_membro = $(this).attr('id_membro');
+                let el = $(this).parent().parent();
+
+                $.ajax({
+                    method: 'post',
+                    data: {'id_membro': id_membro},
+                    url: 'deletar.php'
+                }).done(function () {
+                    el.fadeOut(function () {
+                        el.remove();
+                    })
+                })
+
+
+                // $(this).parent().parent().fadeOut();
+                // $(this).parent().parent().remove();
+            })
 
         })
     </script>
