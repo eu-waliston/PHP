@@ -1,3 +1,10 @@
+<?php
+$pdo = new PDO('mysql:host=localhost;dbname=bootstrap_projeto', 'root', '99583100');
+$sobre = $pdo->prepare("SELECT * FROM td_sobre");
+$sobre->execute();
+$sobre = $sobre->fetch()['sobre'];
+?>
+
 <!DOCTYPE html>
 <html lang="pt_br">
 
@@ -88,18 +95,33 @@
                         </ul>
                     </div>
                     <div class="col-md-9">
+                        <?php
+                        if (isset($_POST['editar_sobre'])) {
 
+                            $sobre = $_POST['sobre'];
+                            $pdo->exec("DELETE FROM td_sobre");
+                            $sql = $pdo->prepare("INSERT INTO td_sobre VALUES (null, ?)");
+                            $sql->execute([$sobre]);
+                            $sobre = $pdo->prepare("SELECT * FROM td_sobre");
+                            $sobre->execute();
+                            $sobre = $sobre->fetch()['sobre'];
+
+                            echo '<div class="alert alert-success" role="alert">O código HTML <b>sobre</b> foi editado com sucesso </div>';
+                        }
+                        ?>
                         <div class="card" id="sobre_section">
                             <div class="card-header bg-primary text-white">
                                 Sobre
                             </div>
                             <div class="card-body">
-                                <form>
+                                <form method="post">
                                     <div class="form-group">
                                         <label for="email">Código HTML</label>
-                                        <textarea style="height: 140px;" class="form-control"></textarea>
+                                        <textarea name="sobre" style="height: 140px;"
+                                            class="form-control"><?php echo $sobre; ?></textarea>
                                     </div>
-                                    <button type="submit" class="btn btn-primary  mt-2">Submit</button>
+                                    <input type="hidden" name="editar_sobre" value="">
+                                    <button name="acao" type="submit" class="btn btn-primary  mt-2">Submit</button>
                                 </form>
                             </div>
                         </div>
