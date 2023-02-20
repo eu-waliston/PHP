@@ -107,6 +107,18 @@ $sobre = $sobre->fetch()['sobre'];
                             $sobre = $sobre->fetch()['sobre'];
 
                             echo '<div class="alert alert-success" role="alert">O código HTML <b>sobre</b> foi editado com sucesso </div>';
+
+                        } else if (isset($_POST['cadastrar_equipe'])) {
+                            $nome = $_POST['nome_membro'];
+                            $descricao = $_POST['descricao'];
+
+                            $sql = $pdo->prepare("INSERT INTO td_equipe VALUES (null, ?,?)");
+
+                            $sql->execute([$nome, $descricao]);
+
+
+                            echo '<div class="alert alert-success" role="alert">O membro da equipe foi cadastrado com sucesso </div>';
+
                         }
                         ?>
                         <div class="card" id="sobre_section">
@@ -132,17 +144,19 @@ $sobre = $sobre->fetch()['sobre'];
                                 Cadstrar Equipe
                             </div>
                             <div class="card-body">
-                                <form>
+                                <form method="post">
                                     <div class="form-group">
                                         <label for="email">Nome do Memebro</label>
                                         <br />
-                                        <input type="text" name="membro_nome" class="form-control">
+                                        <input type="text" name="nome_membro" class="form-control">
                                     </div>
                                     <br />
                                     <div class="form-group">
                                         <label for="email">Descrição do Memebro</label>
-                                        <textarea style="height: 140px;" class="form-control"></textarea>
+                                        <textarea name="descricao" style="height: 140px;"
+                                            class="form-control"></textarea>
                                     </div>
+                                    <input type="hidden" name="cadastrar_equipe">
                                     <button type="submit" class="btn btn-primary mt-2">Submit</button>
                                 </form>
                             </div>
@@ -165,11 +179,15 @@ $sobre = $sobre->fetch()['sobre'];
                                     </thead>
                                     <tbody>
                                         <?php
-                                        for ($i = 0; $i < 5; $i++) {
+                                        $selectMembro = $pdo -> prepare("SELECT id, nome FROM td_equipe;");
+                                        $selectMembro -> execute();
+                                        $membros = $selectMembro-> fetchAll();
+
+                                        foreach($membros as $key => $value) {
                                             ?>
                                             <tr>
-                                                <th scope="row">1</th>
-                                                <td>Waliston</td>
+                                                <th scope="row"><?php echo $value['id'] ?></th>
+                                                <td><?php echo $value['nome'] ?></td>
                                                 <td>
                                                     <button class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
                                                 </td>
