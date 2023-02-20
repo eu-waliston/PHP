@@ -1,3 +1,7 @@
+body {
+    background-color: rgb(225 225 225);
+}
+
 .navbar {
     background-color: #1171a0;
 }
@@ -147,4 +151,26 @@
 .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item.active {
     color: #ffffff;
     background-color: #1dbdda;
+}
+
+
+
+/*========HEADER CUSTOM STYLE========*/
+header#header {
+    background-color: #333;
+    color: #fff;
+
+}
+header p, header h2 {
+    margin-top: 20px;
+}
+
+
+@media screen and (max-with: 1000px) {
+    #header p {
+        margin-top: 20px;
+        position: relative;
+        top: 0;
+        text-align: center;
+    }
 }
